@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import useIncrementIndex from "./hooks/useIncrementIndex";
+import useIndex from "./hooks/useIndex";
 import { 
   NavBarUnderline, 
   Parallax,
@@ -13,7 +13,7 @@ function App() {
     <Parallax/>,
     <ShrinkingBackground/>
   ];
-  const [ value, increment, decrement ] = useIncrementIndex(0, pages.length);  
+  const [ value, increment, decrement ] = useIndex(0, pages.length);  
   
 
   return (
