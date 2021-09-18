@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function useIncrementIndex(defaultValue=0, maxValue) {
+function useIndex(defaultValue=0, maxValue) {
     const [value, setValue] = useState(defaultValue);
 
     const increment =()=>{
@@ -20,4 +20,4 @@ function useIncrementIndex(defaultValue=0, maxValue) {
     return [value, increment, decrement];
 }
 
-export default useIncrementIndex;
+export default useIndex;
