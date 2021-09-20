@@ -7,7 +7,7 @@ function Parallax(){
         <Container>
             <ParallaxContainer>
                 <Background>
-                    <img src={ImgSrc}/>
+                    <img src={ImgSrc} alt="starlit snowy mountain"/>
                 </Background>
                 <Foreground>
                     <h1>Hello there</h1>
@@ -16,7 +16,7 @@ function Parallax(){
             <Section/>
             <ParallaxEasy/>
             <Section>
-                <a href="https://www.pexels.com/photo/mountain-covered-snow-under-star-572897/" target='_blank'>Photo by eberhard grossgasteiger from Pexels</a>
+                <a href="https://www.pexels.com/photo/mountain-covered-snow-under-star-572897/" target='_blank' rel="noreferrer">Photo by eberhard grossgasteiger from Pexels</a>
                 <p>The first type of parallax where the background image is fixed in place</p>
             </Section>
             
