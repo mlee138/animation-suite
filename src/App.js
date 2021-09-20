@@ -14,7 +14,6 @@ function App() {
     <ShrinkingBackground/>
   ];
   const [ value, increment, decrement ] = useIndex(0, pages.length);  
-  
 
   return (
     <Container>
