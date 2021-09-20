@@ -15,20 +15,17 @@ const Container = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    text-shadow: 1px 1px 2px #303030;
+    text-align: center;
 `;
 
 const H1 = styled.h1`
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid #191919;
     padding: 1rem;
-    color: black;
-    text-shadow; 2px 2px 2px solid black;
-    text-align: center;
 `;
 
 const H3 = styled.h3`
-    color: black;
-    text-shadow; 2px 2px 2px solid black;
-    text-align: center;
     font-style: italic;
     font-weight: normal;
 `;
