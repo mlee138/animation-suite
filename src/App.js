@@ -4,6 +4,7 @@ import useIndex from "./hooks/useIndex";
 import { 
   NavBarUnderline, 
   Parallax,
+  MovingCircles,
   ShrinkingBackground
 } from './componentExport';
 
@@ -11,6 +12,7 @@ function App() {
   const pages = [
     <NavBarUnderline/>, 
     <Parallax/>,
+    <MovingCircles/>,
     <ShrinkingBackground/>
   ];
   const [ value, increment, decrement ] = useIndex(0, pages.length);  

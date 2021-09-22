@@ -1,10 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function CanvasContainer({containerRef, title, date, children}) {
+function CanvasContainer({containerRef, title, date, theme="light", children}) {
+    let bgColor, fontColor;
+    if (theme === 'light'){
+        bgColor = 'white'
+        fontColor = 'black'
+    } else {
+        bgColor = 'black'
+        fontColor = 'white'
+    }
+    
     return(
-        <Container ref={containerRef}>
-            <TextOverlay>
+        <Container style={{backgroundColor:bgColor}} ref={containerRef}>
+            <TextOverlay style={{color: fontColor}}>
                 <H1>{title}</H1>
                 <H3>created: {date}</H3>
             </TextOverlay>

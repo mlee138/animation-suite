@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import CanvasContainer from './CanvasContainer';
 
-function ShrinkingBackground(){
+function MovingCircles(){
     const containerRef = useRef(null);
     const canvasRef = useRef(null);
 
@@ -25,9 +25,11 @@ function ShrinkingBackground(){
         const colors = ['#D4F1F4', '#75E6DA', '#189AB4', '#05445E']
 
         class Circle{
-            constructor(x, y, r, color) {
+            constructor(x, y, dx, dy, r, color) {
                 this.x = x;
                 this.y = y ;
+                this.dx = dx;
+                this.dy = dy;
                 this.r = r;
                 this.originalRadius = r;
                 this.color = color;
@@ -41,21 +43,29 @@ function ShrinkingBackground(){
             }
 
             update(){
-                const minRadius = 5;
-                const distance = 50;
+                const maxRadius = 45;
+                const distance = 75;
+                if(this.x+this.r > container.offsetWidth || this.x-this.r < 0 ){
+                    this.dx *= -1;
+                }
+                if(this.y+this.r > container.offsetHeight || this.y-this.r < 0){
+                    this.dy *= -1;
+                }
+                this.x += this.dx;
+                this.y += this.dy;
 
                 if(mouse.x - this.x < distance && 
                     mouse.x - this.x > -1*distance &&
                     mouse.y - this.y < distance &&
                     mouse.y - this.y > -1*distance
                 ) { 
-                    if(this.r > minRadius){
+                    if(this.r < maxRadius){
         
-                     this.r -=2;
+                     this.r +=2;
                     }
                 } else  {
-                    if(this.r < this.originalRadius) {
-                        this.r +=2;
+                    if(this.r > this.originalRadius) {
+                        this.r -=2;
                     }	
                 }
         
@@ -65,19 +75,18 @@ function ShrinkingBackground(){
 
         const init=()=>{
             let circles = [];
-            let x = 0;
-            let y = 0;
-            let gap = 5;
-            let radius = 30
-            let alt = true;
-            while(x < canvas.width && y < canvas.height){
-                circles.push( new Circle(x, y, radius, colors[Math.floor(Math.random()*colors.length)]) );
-                x += radius * 2 + gap;
-                if(x > canvas.width){
-                    alt ? x=radius : x=0;
-                    alt = !alt;
-                    y += radius * 2;
-                }
+            for(let i=0; i<100; i++){
+                const radius = Math.random()*25 + 5;
+                circles.push(
+                    new Circle(
+                        Math.random() * (container.offsetWidth - radius*2) + radius, 
+                        Math.random() * (container.offsetHeight - radius*2) + radius,
+                        (Math.random() - 0.5) * 1,
+                        (Math.random() - 0.5) * 1,
+                        radius,
+                        colors[Math.floor(Math.random()*colors.length)]
+                    )
+                );
             }
             return circles;
         }
@@ -100,10 +109,14 @@ function ShrinkingBackground(){
     }, []);
 
     return (
-        <CanvasContainer containerRef={containerRef} title='Shrinking Background' date='9-22-2021' >
+        <CanvasContainer 
+        containerRef={containerRef} 
+        title='Bouncing Circles' 
+        date='9-20-2021'
+        theme='dark'>
             <canvas ref={canvasRef}/>
         </CanvasContainer>
     )
 }
 
-export default ShrinkingBackground;
+export default MovingCircles;
