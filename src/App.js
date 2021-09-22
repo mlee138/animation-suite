@@ -5,7 +5,8 @@ import {
   NavBarUnderline, 
   Parallax,
   MovingCircles,
-  ShrinkingBackground
+  ShrinkingBackground,
+  ConnectingLine
 } from './componentExport';
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
     <NavBarUnderline/>, 
     <Parallax/>,
     <MovingCircles/>,
-    <ShrinkingBackground/>
+    <ShrinkingBackground/>,
+    <ConnectingLine/>
   ];
   const [ value, increment, decrement ] = useIndex(0, pages.length);  
 
