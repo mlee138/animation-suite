@@ -77,7 +77,7 @@ function GravityBall (){
     },[])
 
     return(
-        <CanvasContainer containerRef={containerRef} title='Gravity Test' date='9-23-2021'>
+        <CanvasContainer containerRef={containerRef} title='Bouncing Balls' date='9-23-2021'>
             <canvas ref={canvasRef}/>
         </CanvasContainer>
     )

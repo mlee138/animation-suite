@@ -111,7 +111,7 @@ function MovingCircles(){
     return (
         <CanvasContainer 
         containerRef={containerRef} 
-        title='Bouncing Circles' 
+        title='Floating Circles' 
         date='9-20-2021'
         theme='dark'>
             <canvas ref={canvasRef}/>

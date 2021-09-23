@@ -68,7 +68,7 @@ function ConnectingLine(){
     },[])
 
     return(
-        <CanvasContainer containerRef={containerRef} title="Connecting Line" date="9-22-2021">
+        <CanvasContainer containerRef={containerRef} title="Reel it in" date="9-22-2021">
             <canvas ref={canvasRef}></canvas>
         </CanvasContainer>
     )
