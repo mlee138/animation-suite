@@ -13,18 +13,20 @@ function GravityBall (){
         let ctx = canvas.getContext('2d');
 
         class Circle {
-            constructor(x, y, dx, dy, r){
+            constructor(x, y, dx, dy, r, color){
                 this.x = x;
                 this.y = y;
                 this.dx = dx;
                 this.dy = dy;
                 this.r = r;
+                this.color = color;
             }
-            gravity = 1;
+            gravity = 0.9;
             friction = 0.9;
             draw(){
                 ctx.beginPath();
-                ctx.arc(this.x + this.r, this.y + this.r, 30, 0, Math.PI*2);
+                ctx.arc(this.x + this.r, this.y + this.r, this.r, 0, Math.PI*2);
+                ctx.fillStyle = this.color;
                 ctx.fill();
             }
 
@@ -43,14 +45,17 @@ function GravityBall (){
 
         const init =()=>{
             const arr = [];
-            const radius = 30;
+            const colors = ['#FBE7C6', '#B4F8C8', '#A0E7E5', '#FFAEBC' ]
             for(let i=0; i<50; i++){
+                const radius = Math.random()*20 + 15;
                 arr.push( new Circle(
                                 Math.random()*(canvas.width-radius*2)+radius,
-                                Math.random()*(canvas.height-radius*2)+radius, 
-                                Math.random()*30+1, 
-                                Math.random()*3, 
-                                radius) );
+                                Math.random()*canvas.height - (canvas.height/1.5), 
+                                Math.random()*30+5, 
+                                Math.random()*10, 
+                                radius,
+                                colors[Math.floor(Math.random()*colors.length)]) 
+                        );
             }
             return arr;
         }
