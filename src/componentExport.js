@@ -4,6 +4,8 @@ import MovingCircles from "./components/MovingCircles";
 import ShrinkingBackground from "./components/ShrinkingBackground";
 import ConnectingLine from "./components/ConnectingLine";
 import GravityBall from "./components/GravityBall";
+import FloatingAsteroids from "./components/FloatingAsteriods";
+import Flashlight from "./components/Flashlight";
 
 export {
     NavBarUnderline,
@@ -11,5 +13,7 @@ export {
     MovingCircles,
     ShrinkingBackground,
     ConnectingLine,
-    GravityBall
+    GravityBall,
+    FloatingAsteroids,
+    Flashlight
 }

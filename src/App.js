@@ -7,7 +7,9 @@ import {
   MovingCircles,
   ShrinkingBackground,
   ConnectingLine,
-  GravityBall
+  GravityBall,
+  FloatingAsteroids,
+  Flashlight
 } from './componentExport';
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
     <MovingCircles/>,
     <ShrinkingBackground/>,
     <ConnectingLine/>,
-    <GravityBall/>
+    <GravityBall/>,
+    <FloatingAsteroids/>,
+    <Flashlight/>
   ];
   const [ value, increment, decrement ] = useIndex(0, pages.length);  
 
