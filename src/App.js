@@ -6,7 +6,8 @@ import {
   Parallax,
   MovingCircles,
   ShrinkingBackground,
-  ConnectingLine
+  ConnectingLine,
+  GravityBall
 } from './componentExport';
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
     <Parallax/>,
     <MovingCircles/>,
     <ShrinkingBackground/>,
-    <ConnectingLine/>
+    <ConnectingLine/>,
+    <GravityBall/>
   ];
   const [ value, increment, decrement ] = useIndex(0, pages.length);  
 
