@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import CanvasContainer from './CanvasContainer';
+import { distance } from '../helper/distance';
 
 function ConnectingLine(){
     const canvasRef = useRef(null);
@@ -28,7 +29,7 @@ function ConnectingLine(){
         const draw = () => {
             //line
             ctx.beginPath();
-            const h = Math.sqrt( (mouse.x-width/2)**2 + (mouse.y-height/2)**2);
+            const h = distance(mouse.x, width/2, mouse.y, height/2);
             const thickness = 1000 / h;
             ctx.lineWidth = thickness > 60 ? 60 : thickness;
             ctx.lineCap = 'round';

@@ -40,6 +40,8 @@ function MovingCircles(){
                 context.arc(this.x, this.y, this.r, 0, Math.PI *2);
                 context.fillStyle = this.color;
                 context.fill();
+                context.strokeStyle = 'white';
+                context.stroke();
                 context.closePath();
             }
 
