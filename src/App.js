@@ -14,14 +14,13 @@ import {
 
 function App() {
   const pages = [
-    <NavBarUnderline/>, 
-    <Parallax/>,
     <MovingCircles/>,
     <ShrinkingBackground/>,
     <ConnectingLine/>,
     <GravityBall/>,
     <FloatingAsteroids/>,
-    <Flashlight/>
+    <Flashlight/>,
+    <NavBarUnderline/>
   ];
   const [ value, increment, decrement ] = useIndex(0, pages.length);  
 
@@ -39,7 +38,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-
   .left {
     left:0;
   }
@@ -55,17 +53,18 @@ const Arrow = styled.button`
   bottom: 0;
   border: none;
   padding: 0.5rem;
-  background: none;
+  background: rgba(80, 80, 80, 0.25);
   font-weight: bold;
   font-size: 3em;
   opacity: 0.5;
-  mix-blend-mode: darken;
+  color: white;
+  mix-blend-mode: difference;
 
   transition: all 0.2s ease-in-out;
   
   &:hover {
     opacity: 1;
-    background-color: hsla(255, 100%, 0%, 0.1);
+    background: rgba(80, 80, 80, 0.8);
   }
 `;
 

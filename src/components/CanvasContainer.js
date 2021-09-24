@@ -36,6 +36,7 @@ const TextOverlay = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
 
+    letter-spacing: 4px;
     text-shadow: 1px 1px 2px #303030;
     text-align: center;
 `;
@@ -43,6 +44,7 @@ const TextOverlay = styled.div`
 const H1 = styled.h1`
     border-bottom: 5px solid #191919;
     padding: 1rem;
+    
 `;
 
 const H3 = styled.h3`
