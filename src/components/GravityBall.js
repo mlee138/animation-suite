@@ -28,6 +28,7 @@ function GravityBall (){
                 ctx.arc(this.x + this.r, this.y + this.r, this.r, 0, Math.PI*2);
                 ctx.fillStyle = this.color;
                 ctx.fill();
+                ctx.closePath();
             }
 
             update() {

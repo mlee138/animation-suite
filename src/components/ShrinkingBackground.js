@@ -38,6 +38,7 @@ function ShrinkingBackground(){
                 context.arc(this.x, this.y, this.r, 0, Math.PI *2);
                 context.fillStyle = this.color;
                 context.fill();
+                context.closePath();
             }
 
             update(){

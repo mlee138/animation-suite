@@ -38,6 +38,7 @@ function ConnectingLine(){
             ctx.moveTo(width/2,height/2);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();
+            ctx.closePath();
 
             //spinning center
             ctx.beginPath()
@@ -49,7 +50,8 @@ function ConnectingLine(){
             ctx.lineCap = 'square';
             ctx.lineWidth = 6;
             ctx.strokeStyle = 'hsl(250, 69%, 57%)';
-            ctx.stroke()
+            ctx.stroke();
+            ctx.closePath();
         }
 
         const render=()=>{
