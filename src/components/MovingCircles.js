@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import CanvasContainer from './CanvasContainer';
+import { distance } from '../helper/distance';
 
 function MovingCircles(){
     const containerRef = useRef(null);
@@ -22,7 +23,32 @@ function MovingCircles(){
         canvas.height = container.offsetHeight;
         const context = canvas.getContext('2d');
         let animationFrameId;
-        const colors = ['#D4F1F4', '#75E6DA', '#189AB4', '#05445E']
+        const colors = [
+            {
+                r:212,
+                g:241,
+                b:244,
+                a:0
+            },
+            {
+                r:117,
+                g:230,
+                b:218,
+                a:0
+            },
+            {
+                r:24,
+                g:154,
+                b:180,
+                a:0
+            },
+            {
+                r:5,
+                g:68,
+                b:94,
+                a:0
+            },
+        ]
 
         class Circle{
             constructor(x, y, dx, dy, r, color) {
@@ -31,14 +57,13 @@ function MovingCircles(){
                 this.dx = dx;
                 this.dy = dy;
                 this.r = r;
-                this.originalRadius = r;
                 this.color = color;
             }
             
             draw() {
                 context.beginPath();
                 context.arc(this.x, this.y, this.r, 0, Math.PI *2);
-                context.fillStyle = this.color;
+                context.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.color.a})`;
                 context.fill();
                 context.strokeStyle = 'white';
                 context.stroke();
@@ -46,8 +71,7 @@ function MovingCircles(){
             }
 
             update(){
-                const maxRadius = 45;
-                const distance = 75;
+                //bounce off sides
                 if(this.x+this.r > container.offsetWidth || this.x-this.r < 0 ){
                     this.dx *= -1;
                 }
@@ -57,21 +81,11 @@ function MovingCircles(){
                 this.x += this.dx;
                 this.y += this.dy;
 
-                if(mouse.x - this.x < distance && 
-                    mouse.x - this.x > -1*distance &&
-                    mouse.y - this.y < distance &&
-                    mouse.y - this.y > -1*distance
-                ) { 
-                    if(this.r < maxRadius){
-        
-                     this.r +=2;
-                    }
-                } else  {
-                    if(this.r > this.originalRadius) {
-                        this.r -=2;
-                    }	
-                }
-        
+                // change color based on distance
+                const minDistance = 150;
+                const dist = distance(this.x, mouse.x, this.y, mouse.y);
+                if(dist < minDistance) this.color.a = (minDistance - dist)/minDistance;
+                else this.color.a = 0;
                 this.draw();
             }
         }
