@@ -110,7 +110,7 @@ function MovingCircles(){
         containerRef={containerRef} 
         title='Floating Circles' 
         date='9-20-2021'
-        theme='dark'>
+        bg='black'>
             <canvas ref={canvasRef}/>
         </CanvasContainer>
     )

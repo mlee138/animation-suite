@@ -1,12 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function CanvasContainer({containerRef, title, date, theme="light", children}) {
-    
+function CanvasContainer({containerRef, title, date, children, bg}) {
     return(
-        <Container 
-            style={theme==='light' ? {backgroundColor:'white'} : {backgroundColor:'black'}} 
-            ref={containerRef}>
+        <Container ref={containerRef} bg={bg}>
             <TextOverlay>
                 <H1>{title}</H1>
                 <H3>created: {date}</H3>
@@ -17,6 +14,7 @@ function CanvasContainer({containerRef, title, date, theme="light", children}) {
 }
 
 const Container = styled.div`
+    background-color: ${({bg}) =>  bg};
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
