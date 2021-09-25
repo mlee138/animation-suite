@@ -9,18 +9,20 @@ import {
   ConnectingLine,
   GravityBall,
   FloatingAsteroids,
-  Flashlight
+  Flashlight,
+  ConnectingDots
 } from './componentExport';
 
 function App() {
   const pages = [
+    <ConnectingDots/>,
     <MovingCircles/>,
     <ShrinkingBackground/>,
     <ConnectingLine/>,
     <GravityBall/>,
     <FloatingAsteroids/>,
     <Flashlight/>,
-    <NavBarUnderline/>
+    <NavBarUnderline/>,
   ];
   const [ value, increment, decrement ] = useIndex(0, pages.length);  
 

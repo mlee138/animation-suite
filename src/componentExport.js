@@ -6,6 +6,7 @@ import ConnectingLine from "./components/ConnectingLine";
 import GravityBall from "./components/GravityBall";
 import FloatingAsteroids from "./components/FloatingAsteriods";
 import Flashlight from "./components/Flashlight";
+import ConnectingDots from "./components/ConnectingDots";
 
 export {
     NavBarUnderline,
@@ -15,5 +16,6 @@ export {
     ConnectingLine,
     GravityBall,
     FloatingAsteroids,
-    Flashlight
+    Flashlight,
+    ConnectingDots
 }

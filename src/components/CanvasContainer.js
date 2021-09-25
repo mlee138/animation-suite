@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function CanvasContainer({containerRef, title, date, children, bg}) {
+function CanvasContainer({containerRef, title, date, children, bg='white'}) {
     return(
         <Container ref={containerRef} bg={bg}>
             <TextOverlay>
