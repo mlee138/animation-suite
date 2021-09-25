@@ -24,30 +24,10 @@ function MovingCircles(){
         const context = canvas.getContext('2d');
         let animationFrameId;
         const colors = [
-            {
-                r:212,
-                g:241,
-                b:244,
-                a:0
-            },
-            {
-                r:117,
-                g:230,
-                b:218,
-                a:0
-            },
-            {
-                r:24,
-                g:154,
-                b:180,
-                a:0
-            },
-            {
-                r:5,
-                g:68,
-                b:94,
-                a:0
-            },
+            { r:212, g:241, b:244, a:0 },
+            { r:117, g:230, b:218, a:0 },
+            { r:24, g:154, b:180, a:0 },
+            { r:5, g:68, b:94, a:0 },
         ]
 
         class Circle{
@@ -81,7 +61,7 @@ function MovingCircles(){
                 this.x += this.dx;
                 this.y += this.dy;
 
-                // change color based on distance
+                // change alpha based on distance
                 const minDistance = 150;
                 const dist = distance(this.x, mouse.x, this.y, mouse.y);
                 if(dist < minDistance) this.color.a = (minDistance - dist)/minDistance;

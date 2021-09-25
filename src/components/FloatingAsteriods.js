@@ -1,12 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import CanvasContainer from './CanvasContainer';
-
-/* INSPIRATION: astroid belt featuring...
-    - collision
-    - balls teleport to opposite sides of screen
-    - random sizes + (grayscale) colors
-    - starry background?
-*/
+import { distance } from '../helper/distance'
+import { resolveCollision } from '../helper/util-elastic-collision'
 
 function FloatingAsteroids() {
     const containerRef = useRef(null);
@@ -38,6 +33,7 @@ function FloatingAsteroids() {
                 this.dy = dy;
                 this.r = r;
                 this.color = color;
+                this.mass = 1;
             }
             
             draw() {
@@ -48,7 +44,15 @@ function FloatingAsteroids() {
                 context.closePath();
             }
 
-            update(){
+            update(circles){
+                this.draw();
+                for(let i=0; i < circles.length; i++){
+                    if(this === circles[i]) continue;
+                    const combinedRadius = this.r + circles[i].r;
+                    if (distance(this.x, circles[i].x, this.y, circles[i].y) - combinedRadius < 0){
+                        resolveCollision(this, circles[i]);
+                    }
+                }
                 if(this.x-this.r > container.offsetWidth) 
                     this.x = 0-this.r;
                 if( this.x+this.r < 0 ) 
@@ -59,8 +63,6 @@ function FloatingAsteroids() {
                     this.y = canvas.height + this.r;
                 this.x += this.dx;
                 this.y += this.dy;
-        
-                this.draw();
             }
         }
 
@@ -96,18 +98,31 @@ function FloatingAsteroids() {
                         starColors[Math.floor(Math.random()*starColors.length)])
                 );
             }
-            for(let i=0; i<50; i++){
-                const radius = Math.random()*20 + 10;
+            for(let i=0; i<40; i++){
+                const radius = Math.random()*30 + 10;
+                let x = Math.random() * canvas.width;
+                let y = Math.random() * canvas.height;
+                if(i !== 0){
+                    for(let j=0; j < circles.length; j++){
+                        const combinedRadius = radius + circles[j].r;
+                        if (distance(x, circles[j].x, y, circles[j].y) - combinedRadius < 0){
+                            x = Math.random() * canvas.width;
+                            y = Math.random() * canvas.height;
+                            j -= 1;
+                        }
+                    }
+                }
                 circles.push(
                     new Circle(
-                        Math.random() * (container.offsetWidth - radius*2) + radius, 
-                        Math.random() * (container.offsetHeight - radius*2) + radius,
-                        (Math.random() - 0.5) * 1,
-                        (Math.random() - 0.5) * 1,
+                        x, 
+                        y,
+                        (Math.random()-0.5) * 1,
+                        (Math.random()-0.5) * 1,
                         radius,
                         colors[Math.floor(Math.random()*colors.length)]
                     )
                 );
+                
             }
         }
         
@@ -115,7 +130,7 @@ function FloatingAsteroids() {
         const render = () => {
             context.clearRect(0, 0, container.offsetWidth, container.offsetHeight);
             stars.forEach(star=> star.draw())
-            circles.forEach(circle=> circle.update() )
+            circles.forEach(circle=> circle.update(circles) )
             animationFrameId = window.requestAnimationFrame(render)
         }
         init()
