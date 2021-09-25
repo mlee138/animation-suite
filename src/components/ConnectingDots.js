@@ -25,11 +25,12 @@ function ConnectingDots() {
         window.addEventListener('mousemove', updateMouse);
 
         class Dot {
-            constructor(x, y, dy, r){
+            constructor(x, y, dy, r, index){
                 this.x = x;
                 this.y = y;
                 this.dy = dy;
                 this.r = r;
+                this.index = index;
             }
 
             draw(){
@@ -38,9 +39,33 @@ function ConnectingDots() {
                 ctx.fillStyle = '#faeece';
                 ctx.fill();
                 ctx.closePath();
+
+                // draw path between dots 
+                // is this O(n*log(n))?
+                for(let i=this.index+1; i<dots.length; i++){
+                    if(distance(this.x, dots[i].x, this.y, dots[i].y) < 50){
+                        ctx.beginPath();
+                        ctx.moveTo(this.x, this.y);
+                        ctx.lineTo(dots[i].x, dots[i].y);
+                        ctx.strokeStyle = '#faeece';
+                        ctx.stroke();
+                        ctx.closePath();
+                    }
+                }
+
+                //draw path between dot and mouse
+                if(distance(this.x, mouse.x, this.y, mouse.y) < 50){
+                    ctx.beginPath();
+                        ctx.moveTo(this.x, this.y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.strokeStyle = '#faeece';
+                        ctx.stroke();
+                        ctx.closePath();
+                }
             }
 
-            update(){
+            update(dots){
+                //move from bottom of screen back to top
                 if (this.y-this.r > canvas.height) this.y = -this.r;
                 this.y += this.dy;
 
@@ -50,13 +75,14 @@ function ConnectingDots() {
 
         const init=()=>{
             const arr = [];
-            const r = 5;
-            for(let i=0; i<30;i++){
+            const r = 4;
+            for(let i=0; i<100;i++){
                 arr.push(new Dot(
                                 Math.random()*(canvas.width+r*2) - r,
                                 Math.random() * canvas.height,
-                                Math.random()*1,
-                                r 
+                                Math.random()*0.5,
+                                r,
+                                i
                             )          
                 )
             }
@@ -67,7 +93,7 @@ function ConnectingDots() {
         const render =()=>{
             ctx.clearRect(0,0, canvas.width, canvas.height);
             dots.forEach(dot=>{
-                dot.update();
+                dot.update(dots);
             })
             animationFrameId = window.requestAnimationFrame(render);
         }
