@@ -38,7 +38,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   .left {
     left:0;
   }
@@ -54,6 +54,7 @@ const Arrow = styled.button`
   bottom: 0;
   border: none;
   padding: 0.5rem;
+  box-sizing: border-box;
   background: rgba(80, 80, 80, 0.25);
   font-weight: bold;
   font-size: 3em;

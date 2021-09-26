@@ -16,7 +16,7 @@ function CanvasContainer({containerRef, title, date, children, bg='white'}) {
 const Container = styled.div`
     background-color: ${({bg}) =>  bg};
     width: 100%;
-    height: 100vh;
+    height: 100%;
     box-sizing: border-box;
     padding: 0;
     margin:0;

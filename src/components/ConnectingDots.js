@@ -22,6 +22,7 @@ function ConnectingDots() {
             mouse.y = e.y;
         }
         window.addEventListener('mousemove', updateMouse);
+        window.addEventListener('touchmove', updateMouse);
 
         class Dot {
             constructor(x, y, dy, r, index){
@@ -100,6 +101,7 @@ function ConnectingDots() {
 
         return () => {
             window.removeEventListener('mousemove', updateMouse);
+            window.removeEventListener('touchstart', updateMouse);
             window.cancelAnimationFrame(animationFrameId);
         }
 

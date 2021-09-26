@@ -45,8 +45,8 @@ function MovingCircles(){
                 context.arc(this.x, this.y, this.r, 0, Math.PI *2);
                 context.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.color.a})`;
                 context.fill();
-                context.strokeStyle = 'white';
-                context.stroke();
+                context.shadowBlur= 30;
+                context.shadowColor= `rgb(${this.color.r}, ${this.color.g}, ${this.color.b})`;
                 context.closePath();
             }
 
@@ -62,9 +62,11 @@ function MovingCircles(){
                 this.y += this.dy;
 
                 // change alpha based on distance
-                const minDistance = 150;
+                const minDistance = 175;
                 const dist = distance(this.x, mouse.x, this.y, mouse.y);
-                if(dist < minDistance) this.color.a = (minDistance - dist)/minDistance;
+                if(dist < minDistance) {
+                    this.color.a = (minDistance - dist)/minDistance;
+                }
                 else this.color.a = 0;
                 this.draw();
             }
@@ -108,7 +110,7 @@ function MovingCircles(){
     return (
         <CanvasContainer 
         containerRef={containerRef} 
-        title='Floating Circles' 
+        title='Glowing Circles' 
         date='9-20-2021'
         bg='#081122'>
             <canvas ref={canvasRef}/>

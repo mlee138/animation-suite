@@ -25,6 +25,7 @@ function ConnectingLine(){
             mouse.y = e.y;
         }
         window.addEventListener('mousemove', updateMouse);
+        window.addEventListener('touchmove', updateMouse);
 
         const draw = () => {
             //line
