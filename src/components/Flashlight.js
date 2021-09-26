@@ -16,7 +16,7 @@ function Flashlight() {
     },[])
 
     return (
-        <CanvasContainer containerRef={containerRef} title='Flashlight' date='09-23-2021'>
+        <CanvasContainer containerRef={containerRef} title='Flashlight' date='09-??-2021'>
             <canvas ref={canvasRef}/>
         </CanvasContainer>
     );

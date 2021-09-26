@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import useIndex from "./hooks/useIndex";
 import { 
   NavBarUnderline, 
-  Parallax,
   MovingCircles,
   ShrinkingBackground,
   ConnectingLine,
