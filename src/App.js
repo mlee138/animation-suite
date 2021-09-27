@@ -61,6 +61,7 @@ const Arrow = styled.button`
   opacity: 0.5;
   color: white;
   mix-blend-mode: difference;
+  z-index: 5;
 
   transition: all 0.2s ease-in-out;
   
