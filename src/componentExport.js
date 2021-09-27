@@ -7,6 +7,8 @@ import GravityBall from "./components/GravityBall";
 import FloatingAsteroids from "./components/FloatingAsteriods";
 import Flashlight from "./components/Flashlight";
 import ConnectingDots from "./components/ConnectingDots";
+import CircularMotion from "./components/CircularMotion";
+import SlidingScreen from "./components/SlidingScreen";
 
 export {
     NavBarUnderline,
@@ -17,5 +19,7 @@ export {
     GravityBall,
     FloatingAsteroids,
     Flashlight,
-    ConnectingDots
+    ConnectingDots,
+    CircularMotion,
+    SlidingScreen
 }

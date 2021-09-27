@@ -9,11 +9,14 @@ import {
   GravityBall,
   FloatingAsteroids,
   Flashlight,
-  ConnectingDots
+  ConnectingDots,
+  CircularMotion,
+  SlidingScreen
 } from './componentExport';
 
 function App() {
   const pages = [
+    <CircularMotion/>,
     <ConnectingDots/>,
     <MovingCircles/>,
     <ShrinkingBackground/>,
