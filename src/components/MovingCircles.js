@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import CanvasContainer from './CanvasContainer';
+import Container from './Container';
 import { distance } from '../helper/distance';
 
 function MovingCircles(){
@@ -108,13 +108,13 @@ function MovingCircles(){
     }, []);
 
     return (
-        <CanvasContainer 
+        <Container 
         containerRef={containerRef} 
         title='Glowing Circles' 
         date='9-20-2021'
         bg='#081122'>
             <canvas ref={canvasRef}/>
-        </CanvasContainer>
+        </Container>
     )
 }
 

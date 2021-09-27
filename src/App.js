@@ -16,6 +16,7 @@ import {
 
 function App() {
   const pages = [
+    <SlidingScreen/>,
     <CircularMotion/>,
     <ConnectingDots/>,
     <MovingCircles/>,

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import CanvasContainer from './CanvasContainer';
+import Container from './Container';
 
 function ShrinkingBackground(){
     const containerRef = useRef(null);
@@ -101,9 +101,9 @@ function ShrinkingBackground(){
     }, []);
 
     return (
-        <CanvasContainer containerRef={containerRef} title='Shrinking Background' date='9-22-2021' >
+        <Container containerRef={containerRef} title='Shrinking Background' date='9-22-2021' >
             <canvas ref={canvasRef}/>
-        </CanvasContainer>
+        </Container>
     )
 }
 

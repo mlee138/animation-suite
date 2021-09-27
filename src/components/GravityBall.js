@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import CanvasContainer from './CanvasContainer';
+import Container from './Container';
 
 function GravityBall (){
     const containerRef = useRef(null);
@@ -78,9 +78,9 @@ function GravityBall (){
     },[])
 
     return(
-        <CanvasContainer containerRef={containerRef} title='Bouncing Balls' date='9-23-2021' bg='#ffffde'>
+        <Container containerRef={containerRef} title='Bouncing Balls' date='9-23-2021' bg='#ffffde'>
             <canvas ref={canvasRef}/>
-        </CanvasContainer>
+        </Container>
     )
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import CanvasContainer from './CanvasContainer';
+import Container from './Container';
 import { distance } from '../helper/distance';
 
 function ConnectingLine(){
@@ -72,9 +72,9 @@ function ConnectingLine(){
     },[])
 
     return(
-        <CanvasContainer containerRef={containerRef} title="Reel it in" date="9-22-2021">
+        <Container containerRef={containerRef} title="Reel it in" date="9-22-2021">
             <canvas ref={canvasRef}></canvas>
-        </CanvasContainer>
+        </Container>
     )
 }
 

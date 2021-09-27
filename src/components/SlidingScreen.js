@@ -1,19 +1,30 @@
-import React, {useEffect} from 'react';
-import CanvasContainer from './CanvasContainer';
+import React, {useEffect, useState, useRef} from 'react';
+import Container from './Container';
+import styled from 'styled-components';
 
 function SlidingScreen(){
+    const [width, setWidth] = useState(0);
+
     useEffect(()=>{
 
     }, []);
 
     return(
-        <CanvasContainer title='Sliding Screen' date='9-27-2021'>
-            <div>left</div>
-            <div>right</div>
-        </CanvasContainer>
+        <Container title='Sliding Screen' date='9-27-2021'>
+                <Side>left</Side>
+                <Side>right</Side>
+        </Container>
     );
-
-
 }
+
+
+const Side = styled.div`
+    display: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+`;
 
 export default SlidingScreen;

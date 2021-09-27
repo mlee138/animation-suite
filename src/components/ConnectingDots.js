@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { distance } from '../helper/distance';
-import CanvasContainer from './CanvasContainer';
+import Container from './Container';
 
 function ConnectingDots() {
     const containerRef = useRef(null);
@@ -108,9 +108,9 @@ function ConnectingDots() {
     }, []);
 
     return(
-        <CanvasContainer containerRef={containerRef} title='Connecting Dots' date='9-25-2021' bg='orange'>
+        <Container containerRef={containerRef} title='Connecting Dots' date='9-25-2021' bg='orange'>
             <canvas ref={canvasRef}/>
-        </CanvasContainer>
+        </Container>
     );
 }
 

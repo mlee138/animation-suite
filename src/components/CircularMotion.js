@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import CanvasContainer from './CanvasContainer';
+import Container from './Container';
 
 function CircularMotion(){
     const containerRef = useRef(null);
@@ -83,9 +83,9 @@ function CircularMotion(){
     }, []);
 
     return(
-        <CanvasContainer containerRef={containerRef} title='Warp Speed' date='9-27-2021' bg='black'>
+        <Container containerRef={containerRef} title='Warp Speed' date='9-27-2021' bg='black'>
             <canvas ref={canvasRef}/>
-        </CanvasContainer>
+        </Container>
     );
 
 

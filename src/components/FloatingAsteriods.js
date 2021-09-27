@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import CanvasContainer from './CanvasContainer';
+import Container from './Container';
 import { distance } from '../helper/distance'
 import { resolveCollision } from '../helper/util-elastic-collision'
 
@@ -143,9 +143,9 @@ function FloatingAsteroids() {
     },[])
 
     return (
-        <CanvasContainer containerRef={containerRef} title='Floating Asteroids' date='09-24-2021' bg='black'>
+        <Container containerRef={containerRef} title='Floating Asteroids' date='09-24-2021' bg='black'>
             <canvas ref={canvasRef}/>
-        </CanvasContainer>
+        </Container>
     );
 }
 
