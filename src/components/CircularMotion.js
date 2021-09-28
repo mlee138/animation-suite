@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import Container from './Container';
+import styled from 'styled-components';
 
 function CircularMotion(){
     const containerRef = useRef(null);
@@ -83,12 +84,17 @@ function CircularMotion(){
     }, []);
 
     return(
-        <Container containerRef={containerRef} title='Warp Speed' date='9-27-2021' bg='black'>
-            <canvas ref={canvasRef}/>
+        <Container containerRef={containerRef} title='Hold to Warp' date='9-27-2021' bg='black'>
+            <Canvas ref={canvasRef}/>
         </Container>
     );
 
 
 }
+
+const Canvas = styled.canvas`
+    margin: 0;
+    padding: 0;
+`;
 
 export default CircularMotion;

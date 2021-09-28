@@ -35,6 +35,7 @@ const TextOverlay = styled.div`
     letter-spacing: 5px;
     text-shadow: 1px 1px 2px #303030;
     text-align: center;
+    z-index: 5;
 `;
 
 const H1 = styled.h1`

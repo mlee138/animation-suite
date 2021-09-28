@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Container from './Container';
-/* NOTE: it does NOT work with scroll*/
 
 function Flashlight() {
     const [mouseX, setMouseX] = useState(100);
@@ -21,7 +20,8 @@ function Flashlight() {
 
     return (
         <Container title='Flashlight' date='09-27-2021'>
-            <P x={mouseX} y={mouseY}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum elementum enim vel auctor. In hac habitasse platea dictumst. Pellentesque vehicula ex ac velit vulputate tincidunt. Curabitur laoreet ipsum non lectus ullamcorper luctus. Pellentesque cursus varius velit, vitae interdum tortor. Aliquam in ipsum dignissim, interdum tellus sit amet, rhoncus tellus. Duis posuere condimentum arcu. Duis pellentesque pulvinar libero, ac lobortis eros suscipit vitae. Aenean id mattis est. Curabitur lobortis lorem neque. Phasellus odio sapien, rutrum faucibus dui eu, aliquet accumsan ipsum. Praesent neque nisi, iaculis vel odio at, vestibulum venenatis velit. Donec quam ex, faucibus sit amet tellus vel, scelerisque venenatis dolor. Sed bibendum accumsan ipsum, at euismod sem ultricies vel.
+            <Light  x={mouseX} y={mouseY}/>
+            <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum elementum enim vel auctor. In hac habitasse platea dictumst. Pellentesque vehicula ex ac velit vulputate tincidunt. Curabitur laoreet ipsum non lectus ullamcorper luctus. Pellentesque cursus varius velit, vitae interdum tortor. Aliquam in ipsum dignissim, interdum tellus sit amet, rhoncus tellus. Duis posuere condimentum arcu. Duis pellentesque pulvinar libero, ac lobortis eros suscipit vitae. Aenean id mattis est. Curabitur lobortis lorem neque. Phasellus odio sapien, rutrum faucibus dui eu, aliquet accumsan ipsum. Praesent neque nisi, iaculis vel odio at, vestibulum venenatis velit. Donec quam ex, faucibus sit amet tellus vel, scelerisque venenatis dolor. Sed bibendum accumsan ipsum, at euismod sem ultricies vel.
 
 Duis at sem a ipsum fringilla dignissim. Nullam vulputate fringilla ultricies. Cras a nunc porta ipsum lobortis sagittis. Morbi consectetur vel felis id blandit. Donec id enim vel sem volutpat vulputate. Suspendisse in commodo enim. Maecenas sed dui ipsum. Duis ultrices efficitur venenatis. Sed pellentesque nec metus nec mollis. Donec accumsan varius ex. Suspendisse suscipit aliquet erat ut vestibulum. Nunc sit amet mi ornare eros tincidunt vehicula. Ut non risus nec risus varius interdum.
 
@@ -37,7 +37,7 @@ Mauris et nisl ex. Donec in velit orci. Donec rutrum rhoncus ullamcorper. Praese
     );
 }
 
-const P = styled.p.attrs(props => ({
+const Light = styled.div.attrs(props => ({
     style: {
         background:` radial-gradient(circle 10vmax at ${props.x}px ${props.y}px,
             rgba(0,0,0,0) 0%,
@@ -46,15 +46,13 @@ const P = styled.p.attrs(props => ({
         )`
     }
 }))`
-position: relative;
-margin: 0;
-&::before {
-    content: '';
     position: fixed;
     width: 100%;
     height: 100%;
-    
-}
+`;
+
+const P = styled.p`
+    margin: 0;
 `;
 
 export default Flashlight;
