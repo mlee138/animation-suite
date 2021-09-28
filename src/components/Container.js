@@ -14,6 +14,7 @@ function Container({containerRef, title, date, children, bg='white'}) {
 }
 
 const Div = styled.div`
+    position: relative;
     background-color: ${({bg}) =>  bg};
     width: 100%;
     height: 100%;
