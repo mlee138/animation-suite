@@ -13,7 +13,7 @@ function SlidingScreen(){
     }, []);
 
     return(
-        <Container containerRef={containerRef} title='Sliding Screen' date='9-27-2021'>
+        <Container containerRef={containerRef} title='Sliding Screen' subtitle='left right left right'>
                 <Side left='0' right={window.innerWidth - width} bg='#20d684' color='hotPink'>left</Side>
                 <Side left={width} right='0' bg='hotPink' color='#20d684'>right</Side>
         </Container>

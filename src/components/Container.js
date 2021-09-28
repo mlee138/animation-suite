@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Container({containerRef, title, date, children, bg='white'}) {
+function Container({containerRef, title, subtitle, children, bg='white'}) {
     return(
         <Div ref={containerRef} bg={bg}>
             <TextOverlay>
                 <H1>{title}</H1>
-                <H3>created: {date}</H3>
+                <H3>{subtitle}</H3>
             </TextOverlay>
             {children}
         </Div>
@@ -24,7 +24,7 @@ const Div = styled.div`
 `;
 
 const TextOverlay = styled.div`
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -39,15 +39,15 @@ const TextOverlay = styled.div`
 `;
 
 const H1 = styled.h1`
+    margin: 0;
     border-bottom: 5px solid #191919;
-    padding: 1rem;
     font-size: 3rem;
 `;
 
 const H3 = styled.h3`
     font-style: italic;
     font-weight: normal;
-    font-size: 1.5rem;
+    font-size: 1rem;
 `;
 
 

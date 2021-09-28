@@ -101,7 +101,7 @@ function ShrinkingBackground(){
     }, []);
 
     return (
-        <Container containerRef={containerRef} title='Shrinking Background' date='9-22-2021' >
+        <Container containerRef={containerRef} title='Shrinking Background' subtitle='big ball go small' >
             <canvas ref={canvasRef}/>
         </Container>
     )

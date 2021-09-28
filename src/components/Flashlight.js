@@ -19,7 +19,7 @@ function Flashlight() {
     },[mouseX, mouseY])
 
     return (
-        <Container title='Flashlight' date='09-27-2021'>
+        <Container title='Flashlight' subtitle='the mouse shines bright'>
             <Light  x={mouseX} y={mouseY}/>
             <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum elementum enim vel auctor. In hac habitasse platea dictumst. Pellentesque vehicula ex ac velit vulputate tincidunt. Curabitur laoreet ipsum non lectus ullamcorper luctus. Pellentesque cursus varius velit, vitae interdum tortor. Aliquam in ipsum dignissim, interdum tellus sit amet, rhoncus tellus. Duis posuere condimentum arcu. Duis pellentesque pulvinar libero, ac lobortis eros suscipit vitae. Aenean id mattis est. Curabitur lobortis lorem neque. Phasellus odio sapien, rutrum faucibus dui eu, aliquet accumsan ipsum. Praesent neque nisi, iaculis vel odio at, vestibulum venenatis velit. Donec quam ex, faucibus sit amet tellus vel, scelerisque venenatis dolor. Sed bibendum accumsan ipsum, at euismod sem ultricies vel.
 

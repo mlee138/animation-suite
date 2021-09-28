@@ -4,7 +4,7 @@ import MovingCircles from "./components/MovingCircles";
 import ShrinkingBackground from "./components/ShrinkingBackground";
 import ConnectingLine from "./components/ConnectingLine";
 import GravityBall from "./components/GravityBall";
-import FloatingAsteroids from "./components/FloatingAsteriods";
+import FloatingAsteroids from "./components/FloatingAsteroids";
 import Flashlight from "./components/Flashlight";
 import ConnectingDots from "./components/ConnectingDots";
 import CircularMotion from "./components/CircularMotion";

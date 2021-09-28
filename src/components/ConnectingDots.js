@@ -108,7 +108,7 @@ function ConnectingDots() {
     }, []);
 
     return(
-        <Container containerRef={containerRef} title='Connecting Dots' date='9-25-2021' bg='orange'>
+        <Container containerRef={containerRef} title='Connecting Dots' subtitle='making connections' bg='orange'>
             <canvas ref={canvasRef}/>
         </Container>
     );

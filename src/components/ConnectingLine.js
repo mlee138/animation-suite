@@ -72,7 +72,7 @@ function ConnectingLine(){
     },[])
 
     return(
-        <Container containerRef={containerRef} title="Reel it in" date="9-22-2021">
+        <Container containerRef={containerRef} title="Reel it in" subtitle="move that mouse!">
             <canvas ref={canvasRef}></canvas>
         </Container>
     )

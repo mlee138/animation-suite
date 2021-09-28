@@ -143,7 +143,7 @@ function FloatingAsteroids() {
     },[])
 
     return (
-        <Container containerRef={containerRef} title='Floating Asteroids' date='09-24-2021' bg='black'>
+        <Container containerRef={containerRef} title='Floating Asteroids' subtitle='collision in space' bg='black'>
             <canvas ref={canvasRef}/>
         </Container>
     );

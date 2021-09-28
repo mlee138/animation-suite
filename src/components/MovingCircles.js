@@ -111,7 +111,7 @@ function MovingCircles(){
         <Container 
         containerRef={containerRef} 
         title='Glowing Circles' 
-        date='9-20-2021'
+        subtitle='let it glow'
         bg='#081122'>
             <canvas ref={canvasRef}/>
         </Container>

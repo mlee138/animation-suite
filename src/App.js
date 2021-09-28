@@ -53,7 +53,7 @@ const Container = styled.div`
 `;
 
 const Arrow = styled.button`
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   border: none;

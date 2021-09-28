@@ -83,7 +83,7 @@ function CircularMotion(){
     }, []);
 
     return(
-        <Container containerRef={containerRef} title='Hold to Warp' date='9-27-2021' bg='black'>
+        <Container containerRef={containerRef} title='Warp Speed' subtitle='hold mouse to initiate' bg='black'>
             <canvas ref={canvasRef}/>
         </Container>
     );
