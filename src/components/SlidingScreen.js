@@ -39,6 +39,7 @@ const Side = styled.div.attrs(props => ({
     font-size: 15vw;
     letter-spacing: 0.25em;
     overflow: hidden;
+    cursor: col-resize;
 `;
 
 export default SlidingScreen;
